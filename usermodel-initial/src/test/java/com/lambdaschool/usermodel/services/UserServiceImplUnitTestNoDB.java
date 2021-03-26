@@ -21,8 +21,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = UserModelApplication.class,
-    properties = {"command.line.runner.enabled=false"})
+@SpringBootTest(classes = UserModelApplication.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UserServiceImplUnitTestNoDB
 {
@@ -34,9 +33,10 @@ public class UserServiceImplUnitTestNoDB
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        //use this function to see your data in the System.out, helps you identify names and ids
-        //also could be used to display any other data you are wanting to double check.
-        //                List<User> myList = userService.findAll();
+        //use this function to see your data in the System.out
+        //Helps you identify names and ids
+        //Also could be used to display any other data you are wanting to double check.
+        //        List<User> myList = userService.findAll();
         //        for (User u : myList) {
         //            System.out.println(u.getUserid() + " " + u.getUsername());
         //        }
@@ -48,7 +48,7 @@ public class UserServiceImplUnitTestNoDB
 
     @Test
     public void findUserById() {
-        assertEquals("test barnbarn", userService.findUserById(11).getUsername());
+        assertEquals("barnbarn", userService.findUserById(11).getUsername());
     }
 
     @Test
@@ -63,7 +63,7 @@ public class UserServiceImplUnitTestNoDB
     }
 
     @Test
-    public void z_delete() {
+    public void delete() {
         userService.delete(13);
         assertEquals(4, userService.findAll().size());
         //there were 5 users now there should be 4
@@ -71,13 +71,13 @@ public class UserServiceImplUnitTestNoDB
 
     @Test
     public void findByName() {
-        assertEquals(14, userService.findByName("test misskitty").getUserid());
+        assertEquals(14, userService.findByName("misskitty").getUserid());
     }
 
     @Test
-    public void z_save() {
+    public void save() {
         //test name is what we want to test, must be lowercase, see data in system.out
-        String testName = "test userbunny";
+        String testName = "userbunny";
         User u3 = new User(testName,
             "ILuvM4th!",
             "test@lambdaschool.local");
@@ -100,10 +100,10 @@ public class UserServiceImplUnitTestNoDB
     }
 
     @Test
-    public void zz_update() {
+    public void update() {
     }
 
     @Test
-    public void zzz_deleteAll() {
+    public void deleteAll() {
     }
 }
