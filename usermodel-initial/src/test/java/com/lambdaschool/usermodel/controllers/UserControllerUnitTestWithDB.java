@@ -34,7 +34,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = UserController.class)
-public class UserControllerUnitTestNoDB {
+public class UserControllerUnitTestWithDB
+{
 
     //autowire mvc
     //mock your service, functions, and a list

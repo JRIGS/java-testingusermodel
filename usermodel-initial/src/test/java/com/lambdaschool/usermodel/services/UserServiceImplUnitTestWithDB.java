@@ -23,7 +23,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = UserModelApplication.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class UserServiceImplUnitTestNoDB
+public class UserServiceImplUnitTestWithDB
 {
 
     @Autowired
@@ -33,6 +33,9 @@ public class UserServiceImplUnitTestNoDB
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
+        // mocks -> fake data
+        // stubs -> fake methods
+        // Java -> mocks
         //use this function to see your data in the System.out
         //Helps you identify names and ids
         //Also could be used to display any other data you are wanting to double check.
