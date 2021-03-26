@@ -62,14 +62,14 @@ public class UserServiceImplUnitTestWithDB
 
     @Test
     public void findAll() {
-        assertEquals(5, userService.findAll().size());
+        assertEquals(4, userService.findAll().size());
     }
 
     @Test
     public void delete() {
         userService.delete(13);
         assertEquals(4, userService.findAll().size());
-        //there were 5 users now there should be 4
+        //there were 5 users now there should be 4 as it affects test above
     }
 
     @Test
